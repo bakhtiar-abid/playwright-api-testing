@@ -36,23 +36,15 @@ let token:number;
             username:"mor_2314",
             password:"83r5^_fa"
         },
-        
-
     });
     expect(_response.status()).toBe(401);
     expect(_response.ok()).toBeFalsy();
-  
     // Extracting HTML response content
     const htmlContent = await _response.text();
     console.log(htmlContent);
-  
     // You can now check the HTML content or perform other assertions on it
-  
     // For example, to check if the response contains the error message:
     expect(htmlContent).toContain("username or password is incorrect");
-    
-
-    
  })
 
 
@@ -108,6 +100,8 @@ let token:number;
 
     
  })
+
+
  test("Login without giving username and password", async ({request, baseURL})=>{
 
   const _response =  await request.post(`${baseURL}/auth/login`,{
@@ -115,6 +109,9 @@ let token:number;
             username:"",
             password:""
         },
+        // headers:{
+        //     "Accept":"application/xml"
+        // }
         
 
     });
@@ -129,6 +126,9 @@ let token:number;
   
     // For example, to check if the response contains the error message:
     expect(htmlContent).toContain("username and password are not provided in JSON format");
+
+    // console.log((await (_response.body())).toString());
+    
     
 
     
@@ -152,8 +152,4 @@ let token:number;
       const result = await _response.json();
       token = result.token;
       console.log(token);
-    
-      
-  
-      
    })

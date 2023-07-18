@@ -78,7 +78,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 917,
+                  "duration": 847,
                   "stdout": [
                     {
                       "text": "username or password is incorrect\n"
@@ -110,7 +110,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 900,
+                  "duration": 1979,
                   "stdout": [
                     {
                       "text": "username or password is incorrect\n"
@@ -142,7 +142,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 481,
+                  "duration": 1862,
                   "stdout": [
                     {
                       "text": "username and password are not provided in JSON format\n"
@@ -157,7 +157,7 @@
             }
           ],
           "file": "LoginTest/login.test.ts",
-          "line": 59,
+          "line": 51,
           "column": 2
         },
         {
@@ -174,7 +174,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 707,
+                  "duration": 390,
                   "stdout": [
                     {
                       "text": "username and password are not provided in JSON format\n"
@@ -189,12 +189,12 @@
             }
           ],
           "file": "LoginTest/login.test.ts",
-          "line": 86,
+          "line": 78,
           "column": 2
         },
         {
           "title": "Login without giving username and password",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -205,8 +205,12 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 490,
+                  "status": "failed",
+                  "duration": 395,
+                  "error": {
+                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"username and password are not provided in JSON formatt\"\u001b[39m\nReceived string:    \u001b[31m\"username and password are not provided in JSON format\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"username and password are not provided in JSON formatt\"\u001b[39m\nReceived string:    \u001b[31m\"username and password are not provided in JSON format\"\u001b[39m\n    at C:\\Users\\BS1113\\Desktop\\Playwright-API-Testing\\LoginTest\\login.test.ts:128:25"
+                  },
                   "stdout": [
                     {
                       "text": "username and password are not provided in JSON format\n"
@@ -214,14 +218,19 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "attachments": []
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "C:\\Users\\BS1113\\Desktop\\Playwright-API-Testing\\LoginTest\\login.test.ts",
+                    "column": 25,
+                    "line": 128
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
           "file": "LoginTest/login.test.ts",
-          "line": 111,
+          "line": 105,
           "column": 2
         },
         {
@@ -236,12 +245,12 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 1,
                   "status": "passed",
-                  "duration": 872,
+                  "duration": 710,
                   "stdout": [
                     {
-                      "text": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTY4OTY3NjkwOH0.0_SGb7IStHRF82doAZGizefQZ86iDfnQSCR0fgBM38Q\n"
+                      "text": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTY4OTY4MDU4Mn0.1bwUbj6HlOD0P4zmYa9APe8OAeALYp3NisvZioTWNeQ\n"
                     }
                   ],
                   "stderr": [],
