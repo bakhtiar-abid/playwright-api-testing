@@ -1,0 +1,99 @@
+{
+  "config": {
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/BS1113/Desktop/Playwright-API-Testing/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "",
+        "testDir": "C:/Users/BS1113/Desktop/Playwright-API-Testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).*"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-result.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "open": "always"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "rootDir": "C:/Users/BS1113/Desktop/Playwright-API-Testing",
+    "quiet": false,
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.23.2",
+    "workers": 6,
+    "webServer": null,
+    "_globalOutputDir": "C:\\Users\\BS1113\\Desktop\\Playwright-API-Testing",
+    "_configDir": "C:\\Users\\BS1113\\Desktop\\Playwright-API-Testing",
+    "_testGroupsCount": 1
+  },
+  "suites": [
+    {
+      "title": "apitest\\login.test.ts",
+      "file": "apitest/login.test.ts",
+      "line": 0,
+      "column": 0,
+      "specs": [
+        {
+          "title": "Login with user credentials",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 919,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "apitest/login.test.ts",
+          "line": 5,
+          "column": 2
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
