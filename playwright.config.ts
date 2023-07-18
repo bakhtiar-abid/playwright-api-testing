@@ -34,9 +34,9 @@ const config: PlaywrightTestConfig = {
         // trace: "on",
         baseURL: "https://fakestoreapi.com",
         // baseURL: "https://dev107189.service-now.com/api/now/table/incident",
-        // extraHTTPHeaders: {
-        //     "Authorization": "Basic mor_2314:83r5^_"
-        // }
+        extraHTTPHeaders: {
+            "Authorization": "Basic mor_2314:83r5^_"
+        },
         
         launchOptions: {
             args: ["--start-maximized"],

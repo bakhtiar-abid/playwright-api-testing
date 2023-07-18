@@ -59,13 +59,13 @@
   },
   "suites": [
     {
-      "title": "apitest\\login.test.ts",
-      "file": "apitest/login.test.ts",
+      "title": "LoginTest\\login.test.ts",
+      "file": "LoginTest/login.test.ts",
       "line": 0,
       "column": 0,
       "specs": [
         {
-          "title": "Login with user credentials",
+          "title": "Login with invalid username",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,8 +78,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 919,
-                  "stdout": [],
+                  "duration": 917,
+                  "stdout": [
+                    {
+                      "text": "username or password is incorrect\n"
+                    }
+                  ],
                   "stderr": [],
                   "retry": 0,
                   "attachments": []
@@ -88,8 +92,168 @@
               "status": "expected"
             }
           ],
-          "file": "apitest/login.test.ts",
-          "line": 5,
+          "file": "LoginTest/login.test.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "Login with invalid password",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 900,
+                  "stdout": [
+                    {
+                      "text": "username or password is incorrect\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "LoginTest/login.test.ts",
+          "line": 32,
+          "column": 2
+        },
+        {
+          "title": "Login without giving username",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 481,
+                  "stdout": [
+                    {
+                      "text": "username and password are not provided in JSON format\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "LoginTest/login.test.ts",
+          "line": 59,
+          "column": 2
+        },
+        {
+          "title": "Login without giving password",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 707,
+                  "stdout": [
+                    {
+                      "text": "username and password are not provided in JSON format\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "LoginTest/login.test.ts",
+          "line": 86,
+          "column": 2
+        },
+        {
+          "title": "Login without giving username and password",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 490,
+                  "stdout": [
+                    {
+                      "text": "username and password are not provided in JSON format\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "LoginTest/login.test.ts",
+          "line": 111,
+          "column": 2
+        },
+        {
+          "title": "Login with valid credentials",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 872,
+                  "stdout": [
+                    {
+                      "text": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTY4OTY3NjkwOH0.0_SGb7IStHRF82doAZGizefQZ86iDfnQSCR0fgBM38Q\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "LoginTest/login.test.ts",
+          "line": 138,
           "column": 2
         }
       ]
