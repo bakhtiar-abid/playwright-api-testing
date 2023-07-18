@@ -55,7 +55,7 @@
     "webServer": null,
     "_globalOutputDir": "C:\\Users\\BS1113\\Desktop\\Playwright-API-Testing",
     "_configDir": "C:\\Users\\BS1113\\Desktop\\Playwright-API-Testing",
-    "_testGroupsCount": 1
+    "_testGroupsCount": 2
   },
   "suites": [
     {
@@ -78,7 +78,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 847,
+                  "duration": 579,
                   "stdout": [
                     {
                       "text": "username or password is incorrect\n"
@@ -93,7 +93,7 @@
             }
           ],
           "file": "LoginTest/login.test.ts",
-          "line": 6,
+          "line": 7,
           "column": 2
         },
         {
@@ -110,7 +110,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 1979,
+                  "duration": 1386,
                   "stdout": [
                     {
                       "text": "username or password is incorrect\n"
@@ -125,7 +125,7 @@
             }
           ],
           "file": "LoginTest/login.test.ts",
-          "line": 32,
+          "line": 33,
           "column": 2
         },
         {
@@ -142,7 +142,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 1862,
+                  "duration": 538,
                   "stdout": [
                     {
                       "text": "username and password are not provided in JSON format\n"
@@ -157,7 +157,7 @@
             }
           ],
           "file": "LoginTest/login.test.ts",
-          "line": 51,
+          "line": 52,
           "column": 2
         },
         {
@@ -174,7 +174,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 390,
+                  "duration": 599,
                   "stdout": [
                     {
                       "text": "username and password are not provided in JSON format\n"
@@ -189,12 +189,12 @@
             }
           ],
           "file": "LoginTest/login.test.ts",
-          "line": 78,
+          "line": 79,
           "column": 2
         },
         {
           "title": "Login without giving username and password",
-          "ok": false,
+          "ok": true,
           "tags": [],
           "tests": [
             {
@@ -205,12 +205,8 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "failed",
-                  "duration": 395,
-                  "error": {
-                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"username and password are not provided in JSON formatt\"\u001b[39m\nReceived string:    \u001b[31m\"username and password are not provided in JSON format\"\u001b[39m",
-                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"username and password are not provided in JSON formatt\"\u001b[39m\nReceived string:    \u001b[31m\"username and password are not provided in JSON format\"\u001b[39m\n    at C:\\Users\\BS1113\\Desktop\\Playwright-API-Testing\\LoginTest\\login.test.ts:128:25"
-                  },
+                  "status": "passed",
+                  "duration": 352,
                   "stdout": [
                     {
                       "text": "username and password are not provided in JSON format\n"
@@ -218,19 +214,14 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "attachments": [],
-                  "errorLocation": {
-                    "file": "C:\\Users\\BS1113\\Desktop\\Playwright-API-Testing\\LoginTest\\login.test.ts",
-                    "column": 25,
-                    "line": 128
-                  }
+                  "attachments": []
                 }
               ],
-              "status": "unexpected"
+              "status": "expected"
             }
           ],
           "file": "LoginTest/login.test.ts",
-          "line": 105,
+          "line": 106,
           "column": 2
         },
         {
@@ -245,12 +236,12 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 1,
+                  "workerIndex": 0,
                   "status": "passed",
-                  "duration": 710,
+                  "duration": 546,
                   "stdout": [
                     {
-                      "text": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTY4OTY4MDU4Mn0.1bwUbj6HlOD0P4zmYa9APe8OAeALYp3NisvZioTWNeQ\n"
+                      "text": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTY4OTY4NjQ4Mn0.K2Hc6GoHXVo94N2wcgumCEGBapdrjwBivunW9RU8FQ0\n"
                     }
                   ],
                   "stderr": [],
@@ -262,8 +253,224 @@
             }
           ],
           "file": "LoginTest/login.test.ts",
-          "line": 138,
+          "line": 139,
           "column": 2
+        }
+      ]
+    },
+    {
+      "title": "RegisterTest\\register.test.ts",
+      "file": "RegisterTest/register.test.ts",
+      "line": 0,
+      "column": 0,
+      "specs": [
+        {
+          "title": "Add a new user by giving proper information",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 576,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "RegisterTest/register.test.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "Update user information by updating fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 543,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "RegisterTest/register.test.ts",
+          "line": 46,
+          "column": 2
+        },
+        {
+          "title": "Deleting a user",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 967,
+                  "stdout": [
+                    {
+                      "text": "{\n  address: {\n    geolocation: { lat: '20.1677', long: '-10.6789' },\n    city: 'el paso',\n    street: 'prospect st',\n    number: 124,\n    zipcode: '12346-0456'\n  },\n  id: 6,\n  email: 'david_r@gmail.com',\n  username: 'david_r',\n  password: '3478*#54',\n  name: { firstname: 'david', lastname: 'russell' },\n  phone: '1-678-345-9856',\n  __v: 0\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "RegisterTest/register.test.ts",
+          "line": 105,
+          "column": 2
+        },
+        {
+          "title": "Delete a user if the user is not in the list",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 601,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "RegisterTest/register.test.ts",
+          "line": 117,
+          "column": 2
+        },
+        {
+          "title": "Get All Users",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 744,
+                  "stdout": [
+                    {
+                      "text": "[\n  {\n    address: {\n      geolocation: [Object],\n      city: 'kilcoole',\n      street: 'new road',\n      number: 7682,\n      zipcode: '12926-3874'\n    },\n    id: 1,\n    email: 'john@gmail.com',\n    username: 'johnd',\n    password: 'm38rmF$',\n    name: { firstname: 'john', lastname: 'doe' },\n    phone: '1-570-236-7033',\n    __v: 0\n  },\n  {\n    address: {\n      geolocation: [Object],\n      city: 'kilcoole',\n      street: 'Lovers Ln',\n      number: 7267,\n      zipcode: '12926-3874'\n    },\n    id: 2,\n    email: 'morrison@gmail.com',\n    username: 'mor_2314',\n    password: '83r5^_',\n    name: { firstname: 'david', lastname: 'morrison' },\n    phone: '1-570-236-7033',\n    __v: 0\n  },\n  {\n    address: {\n      geolocation: [Object],\n      city: 'Cullman',\n      street: 'Frances Ct',\n      number: 86,\n      zipcode: '29567-1452'\n    },\n    id: 3,\n    email: 'kevin@gmail.com',\n    username: 'kevinryan',\n    password: 'kev02937@',\n    name: { firstname: 'kevin', lastname: 'ryan' },\n    phone: '1-567-094-1345',\n    __v: 0\n  },\n  {\n    address: {\n      geolocation: [Object],\n      city: 'San Antonio',\n      street: 'Hunters Creek Dr',\n      number: 6454,\n      zipcode: '98234-1734'\n    },\n    id: 4,\n    email: 'don@gmail.com',\n    username: 'donero',\n    password: 'ewedon',\n    name: { firstname: 'don', lastname: 'romer' },\n    phone: '1-765-789-6734',\n    __v: 0\n  },\n  {\n    address: {\n      geolocation: [Object],\n      city: 'san Antonio',\n      street: 'adams St',\n      number: 245,\n      zipcode: '80796-1234'\n    },\n    id: 5,\n    email: 'derek@gmail.com',\n    username: 'derek',\n    password: 'jklg*_56',\n    name: { firstname: 'derek', lastname: 'powell' },\n    phone: '1-956-001-1945',\n    __v: 0\n  },\n  {\n    address: {\n      geolocation: [Object],\n      city: 'el paso',\n      street: 'prospect st',\n      number: 124,\n      zipcode: '12346-0456'\n    },\n    id: 6,\n    email: 'david_r@gmail.com',\n    username: 'david_r',\n    password: '3478*#54',\n    name: { firstname: 'david', lastname: 'russell' },\n    phone: '1-678-345-9856',\n    __v: 0\n  },\n  {\n    address: {\n      geolocation: [Object],\n      city: 'fresno',\n      street: 'saddle st',\n      number: 1342,\n      zipcode: '96378-0245'\n    },\n    id: 7,\n    email: 'miriam@gmail.com',\n    username: 'snyder',\n    password: 'f238&@*$',\n    name: { firstname: 'miriam', lastname: 'snyder' },\n    phone: '1-123-943-0563',\n    __v: 0\n  },\n  {\n    address: {\n      geolocation: [Object],\n      city: 'mesa',\n      street: 'vally view ln',\n      number: 1342,\n      zipcode: '96378-0245'\n    },\n    id: 8,\n    email: 'william@gmail.com',\n    username: 'hopkins',\n    password: 'William56$hj',\n    name: { firstname: 'william', lastname: 'hopkins' },\n    phone: '1-478-001-0890',\n    __v: 0\n  },\n  {\n    address: {\n      geolocation: [Object],\n      city: 'miami',\n      street: 'avondale ave',\n      number: 345,\n      zipcode: '96378-0245'\n    },\n    id: 9,\n    email: 'kate@gmail.com',\n    username: 'kate_h',\n    password: 'kfejk@*_',\n    name: { firstname: 'kate', lastname: 'hale' },\n    phone: '1-678-456-1934',\n    __v: 0\n  },\n  {\n    address: {\n      geolocation: [Object],\n      city: 'fort wayne',\n      street: 'oak lawn ave',\n      number: 526,\n      zipcode: '10256-4532'\n    },\n    id: 10,\n    email: 'jimmie@gmail.com',\n    username: 'jimmie_k',\n    password: 'klein*#%*',\n    name: { firstname: 'jimmie', lastname: 'klein' },\n    phone: '1-104-001-4567',\n    __v: 0\n  }\n]\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "RegisterTest/register.test.ts",
+          "line": 132,
+          "column": 4
+        },
+        {
+          "title": "Get a single user",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 565,
+                  "stdout": [
+                    {
+                      "text": "{\n  address: {\n    geolocation: { lat: '-37.3159', long: '81.1496' },\n    city: 'kilcoole',\n    street: 'new road',\n    number: 7682,\n    zipcode: '12926-3874'\n  },\n  id: 1,\n  email: 'john@gmail.com',\n  username: 'johnd',\n  password: 'm38rmF$',\n  name: { firstname: 'john', lastname: 'doe' },\n  phone: '1-570-236-7033',\n  __v: 0\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "RegisterTest/register.test.ts",
+          "line": 146,
+          "column": 4
+        },
+        {
+          "title": "Get a sort results",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 967,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "file": "RegisterTest/register.test.ts",
+          "line": 159,
+          "column": 4
         }
       ]
     }

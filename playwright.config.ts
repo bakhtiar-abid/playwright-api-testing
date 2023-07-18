@@ -3,7 +3,7 @@ import { devices, PlaywrightTestConfig } from "@playwright/test";
 
 const config: PlaywrightTestConfig = {
 
-
+    // testDir: "./RegisterTest/",
     // workers: 4,
     // fullyParallel: true,
     // projects: [
@@ -26,6 +26,7 @@ const config: PlaywrightTestConfig = {
     // ],
 
     use: {
+       
         viewport: null,
         headless: !true,
         // browserName: "chromium",

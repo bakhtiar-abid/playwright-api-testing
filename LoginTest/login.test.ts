@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 
 
 let token:number;
+
 //Creating an api request
  test("Login with invalid username", async ({request, baseURL})=>{
 
