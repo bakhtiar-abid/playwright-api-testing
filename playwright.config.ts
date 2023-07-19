@@ -5,7 +5,7 @@ const config: PlaywrightTestConfig = {
 
 
 
-    // testDir: "./RegisterTest/",
+    // testDir: "./CartTest",
     // workers: 4,
     // fullyParallel: true,
     // projects: [
@@ -64,7 +64,11 @@ const config: PlaywrightTestConfig = {
     //         open: "always"
     //     }] // -> HTML
     // ],
-    reporter: [['junit', { outputFile: 'results.xml' }]],
+    reporter: [['junit', { outputFile: 'results.xml' }],
+    ['html', {
+                open: "always"
+            }] // -> HTML
+],
     // globalTeardown: './helper/globalsetup.ts'
 }
 export default config;

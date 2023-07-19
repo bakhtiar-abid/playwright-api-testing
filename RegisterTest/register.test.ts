@@ -158,7 +158,7 @@ let id:number;
 
    test("Get a sort results", async ({request, baseURL})=>{
 
-    const _response =  await request.get(`${baseURL}/users/${id}`,{
+    const _response =  await request.get(`${baseURL}/users`,{
         params: {
             sort:"desc"
             
@@ -169,7 +169,10 @@ let id:number;
     
       // Extracting JSON response content
       const result = await _response.json();
-    //   expect(await Object.keys(result).length).toBe(8);
+      const totalProps = result.reduce((a, obj) => a + Object.keys(obj).length, 0)
+      console.log(totalProps);
+      
+      expect(await totalProps).toBe(80);
     
       
    });
