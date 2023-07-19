@@ -1,0 +1,263 @@
+<testsuites id="" name="" tests="14" failures="1" skipped="0" errors="0" time="7.954">
+<testsuite name="LoginTest\login.test.ts" timestamp="1689748013594" hostname="" tests="6" failures="0" skipped="0" time="5.084" errors="0">
+<testcase name="Login with invalid username" classname="LoginTest\login.test.ts:7:2 › Login with invalid username" time="0.966">
+<system-out>
+<![CDATA[username or password is incorrect
+]]>
+</system-out>
+</testcase>
+<testcase name="Login with invalid password" classname="LoginTest\login.test.ts:33:2 › Login with invalid password" time="0.945">
+<system-out>
+<![CDATA[username or password is incorrect
+]]>
+</system-out>
+</testcase>
+<testcase name="Login without giving username" classname="LoginTest\login.test.ts:52:2 › Login without giving username" time="0.743">
+<system-out>
+<![CDATA[username and password are not provided in JSON format
+]]>
+</system-out>
+</testcase>
+<testcase name="Login without giving password" classname="LoginTest\login.test.ts:79:2 › Login without giving password" time="0.727">
+<system-out>
+<![CDATA[username and password are not provided in JSON format
+]]>
+</system-out>
+</testcase>
+<testcase name="Login without giving username and password" classname="LoginTest\login.test.ts:106:2 › Login without giving username and password" time="0.786">
+<system-out>
+<![CDATA[username and password are not provided in JSON format
+]]>
+</system-out>
+</testcase>
+<testcase name="Login with valid credentials" classname="LoginTest\login.test.ts:139:2 › Login with valid credentials" time="0.917">
+<system-out>
+<![CDATA[eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTY4OTc0ODAyMn0.XlYoKkUJ2GC3C4Q8t0Wa8zAWL6MA0vyMabHzo0Mx_-0
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="RegisterTest\register.test.ts" timestamp="1689748013594" hostname="" tests="8" failures="1" skipped="0" time="6.966" errors="0">
+<testcase name="Add a new user by giving proper information" classname="RegisterTest\register.test.ts:6:2 › Add a new user by giving proper information" time="0.879">
+</testcase>
+<testcase name="Update user information by updating fields" classname="RegisterTest\register.test.ts:46:2 › Update user information by updating fields" time="0.68">
+</testcase>
+<testcase name="Deleting a user" classname="RegisterTest\register.test.ts:105:2 › Deleting a user" time="0.544">
+<system-out>
+<![CDATA[{
+  address: {
+    geolocation: { lat: '20.1677', long: '-10.6789' },
+    city: 'el paso',
+    street: 'prospect st',
+    number: 124,
+    zipcode: '12346-0456'
+  },
+  id: 6,
+  email: 'david_r@gmail.com',
+  username: 'david_r',
+  password: '3478*#54',
+  name: { firstname: 'david', lastname: 'russell' },
+  phone: '1-678-345-9856',
+  __v: 0
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="Delete a user if the user is not in the list" classname="RegisterTest\register.test.ts:117:2 › Delete a user if the user is not in the list" time="0.914">
+</testcase>
+<testcase name="Get All Users" classname="RegisterTest\register.test.ts:132:4 › Get All Users" time="0.925">
+<system-out>
+<![CDATA[[
+  {
+    address: {
+      geolocation: [Object],
+      city: 'kilcoole',
+      street: 'new road',
+      number: 7682,
+      zipcode: '12926-3874'
+    },
+    id: 1,
+    email: 'john@gmail.com',
+    username: 'johnd',
+    password: 'm38rmF$',
+    name: { firstname: 'john', lastname: 'doe' },
+    phone: '1-570-236-7033',
+    __v: 0
+  },
+  {
+    address: {
+      geolocation: [Object],
+      city: 'kilcoole',
+      street: 'Lovers Ln',
+      number: 7267,
+      zipcode: '12926-3874'
+    },
+    id: 2,
+    email: 'morrison@gmail.com',
+    username: 'mor_2314',
+    password: '83r5^_',
+    name: { firstname: 'david', lastname: 'morrison' },
+    phone: '1-570-236-7033',
+    __v: 0
+  },
+  {
+    address: {
+      geolocation: [Object],
+      city: 'Cullman',
+      street: 'Frances Ct',
+      number: 86,
+      zipcode: '29567-1452'
+    },
+    id: 3,
+    email: 'kevin@gmail.com',
+    username: 'kevinryan',
+    password: 'kev02937@',
+    name: { firstname: 'kevin', lastname: 'ryan' },
+    phone: '1-567-094-1345',
+    __v: 0
+  },
+  {
+    address: {
+      geolocation: [Object],
+      city: 'San Antonio',
+      street: 'Hunters Creek Dr',
+      number: 6454,
+      zipcode: '98234-1734'
+    },
+    id: 4,
+    email: 'don@gmail.com',
+    username: 'donero',
+    password: 'ewedon',
+    name: { firstname: 'don', lastname: 'romer' },
+    phone: '1-765-789-6734',
+    __v: 0
+  },
+  {
+    address: {
+      geolocation: [Object],
+      city: 'san Antonio',
+      street: 'adams St',
+      number: 245,
+      zipcode: '80796-1234'
+    },
+    id: 5,
+    email: 'derek@gmail.com',
+    username: 'derek',
+    password: 'jklg*_56',
+    name: { firstname: 'derek', lastname: 'powell' },
+    phone: '1-956-001-1945',
+    __v: 0
+  },
+  {
+    address: {
+      geolocation: [Object],
+      city: 'el paso',
+      street: 'prospect st',
+      number: 124,
+      zipcode: '12346-0456'
+    },
+    id: 6,
+    email: 'david_r@gmail.com',
+    username: 'david_r',
+    password: '3478*#54',
+    name: { firstname: 'david', lastname: 'russell' },
+    phone: '1-678-345-9856',
+    __v: 0
+  },
+  {
+    address: {
+      geolocation: [Object],
+      city: 'fresno',
+      street: 'saddle st',
+      number: 1342,
+      zipcode: '96378-0245'
+    },
+    id: 7,
+    email: 'miriam@gmail.com',
+    username: 'snyder',
+    password: 'f238&@*$',
+    name: { firstname: 'miriam', lastname: 'snyder' },
+    phone: '1-123-943-0563',
+    __v: 0
+  },
+  {
+    address: {
+      geolocation: [Object],
+      city: 'mesa',
+      street: 'vally view ln',
+      number: 1342,
+      zipcode: '96378-0245'
+    },
+    id: 8,
+    email: 'william@gmail.com',
+    username: 'hopkins',
+    password: 'William56$hj',
+    name: { firstname: 'william', lastname: 'hopkins' },
+    phone: '1-478-001-0890',
+    __v: 0
+  },
+  {
+    address: {
+      geolocation: [Object],
+      city: 'miami',
+      street: 'avondale ave',
+      number: 345,
+      zipcode: '96378-0245'
+    },
+    id: 9,
+    email: 'kate@gmail.com',
+    username: 'kate_h',
+    password: 'kfejk@*_',
+    name: { firstname: 'kate', lastname: 'hale' },
+    phone: '1-678-456-1934',
+    __v: 0
+  },
+  {
+    address: {
+      geolocation: [Object],
+      city: 'fort wayne',
+      street: 'oak lawn ave',
+      number: 526,
+      zipcode: '10256-4532'
+    },
+    id: 10,
+    email: 'jimmie@gmail.com',
+    username: 'jimmie_k',
+    password: 'klein*#%*',
+    name: { firstname: 'jimmie', lastname: 'klein' },
+    phone: '1-104-001-4567',
+    __v: 0
+  }
+]
+]]>
+</system-out>
+</testcase>
+<testcase name="Get a single user" classname="RegisterTest\register.test.ts:146:4 › Get a single user" time="1.169">
+<system-out>
+<![CDATA[null
+]]>
+</system-out>
+</testcase>
+<testcase name="Get a sort results" classname="RegisterTest\register.test.ts:159:4 › Get a sort results" time="0.89">
+<failure message="register.test.ts:159:4 Get a sort results" type="FAILURE">
+<![CDATA[  RegisterTest\register.test.ts:159:4 › Get a sort results =========================================
+
+    TypeError: Cannot convert undefined or null to object
+
+      170 |       // Extracting JSON response content
+      171 |       const result = await _response.json();
+    > 172 |       expect(await Object.keys(result).length).toBe(8);
+          |                           ^
+      173 |     
+      174 |       
+      175 |    });
+
+        at Function.keys (<anonymous>)
+        at C:\Users\BS1113\Desktop\Playwright-API-Testing\RegisterTest\register.test.ts:172:27
+]]>
+</failure>
+</testcase>
+<testcase name="Get Limit Results" classname="RegisterTest\register.test.ts:178:4 › Get Limit Results" time="0.965">
+</testcase>
+</testsuite>
+</testsuites>
