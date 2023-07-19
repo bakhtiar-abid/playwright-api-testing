@@ -41,7 +41,7 @@ jobs:
       if: always()
       with:
           xml-file: "./results.xml"
-          xpath: '//testsuite/@tests'
+          xpath: '//testsuites/@tests'
 
 #     - name: Get Passed Tests
 #       uses: mavrosxristoforos/get-xml-info@1.1.1
@@ -57,7 +57,7 @@ jobs:
       if: always()
       with:
           xml-file: "./results.xml"
-          xpath: '//testsuite/@failures'
+          xpath: '//testsuites/@failures'
 
     - name: Get Skipped Tests
       uses: mavrosxristoforos/get-xml-info@1.1.1
@@ -65,7 +65,7 @@ jobs:
       if: always()
       with:
           xml-file: "./results.xml"
-          xpath: '//testsuite/@skipped'
+          xpath: '//testsuites/@skipped'
 
     - name: Generate Reports
       if: always()
@@ -91,7 +91,7 @@ jobs:
               "activitySubtitle": "Execution Report",
               "facts": [
                 {
-                  "name": "Tests",
+                  "name": "Passed",
                   "value": "${{ env.tests }}"
                 },
                 {
