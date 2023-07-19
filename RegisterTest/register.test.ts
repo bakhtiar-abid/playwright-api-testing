@@ -170,5 +170,25 @@ let id:number;
       // Extracting JSON response content
       const result = await _response.json();
       expect(await Object.keys(result).length).toBe(8);
+    
+      
+   });
+
+
+   test("Get Limit Results", async ({request, baseURL})=>{
+
+    const _response =  await request.get(`${baseURL}/users?limit=5`,{
+        params: {
+            sort:"desc"
+            
+        }
+      });
+      expect(_response.status()).toBe(200);
+      expect(_response.ok()).toBeTruthy();
+    
+      // Extracting JSON response content
+      const result = await _response.json();
+      expect(await Object.keys(result).length).toBe(5);
+    
       
    });

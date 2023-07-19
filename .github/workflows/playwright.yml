@@ -1,0 +1,222 @@
+name: Playwright REST-API Testing
+on:
+  push:
+    branches: [ main, main ]
+  pull_request:
+    branches: [ main, main ]
+  workflow_run:
+      workflows: ["*"]
+      types:
+      - completed
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: Install dependencies
+      run: npm ci
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run Playwright tests
+      run: npm test
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report
+        path: test-results/
+        retention-days: 30
+    # - name: Send test results to Microsoft Teams
+    #   run: |
+    #       npm install axios
+    #       node .github/workflows/send-teams-notification.js
+    #   env:
+    #    TEAMS_WEBHOOK_URL: https://brainstationo365.webhook.office.com/webhookb2/8057d271-7315-4cf8-bbc9-da07ef13bb7b@a1e21495-2087-4312-a718-7f84ad109439/IncomingWebhook/9be71384f7774125b9194d8d7cf9cd99/fad27405-4c18-4692-8d4b-a92e0cb2c130
+    - name: Get All Tests
+      uses: mavrosxristoforos/get-xml-info@1.1.1
+      id: getxml_tests
+      if: always()
+      with:
+          xml-file: "./results.xml"
+          xpath: '//testsuite/@tests'
+
+#     - name: Get Passed Tests
+#       uses: mavrosxristoforos/get-xml-info@1.1.1
+#       id: getxml_passed
+#       if: always()
+#       with:
+#           xml-file: "report/Xml/ExtentXml.xml"
+#           xpath: '//testsuite/@passed'
+
+    - name: Get Failed Tests
+      uses: mavrosxristoforos/get-xml-info@1.1.1
+      id: getxml_failures
+      if: always()
+      with:
+          xml-file: "./results.xml"
+          xpath: '//testsuite/@failures'
+
+    - name: Get Skipped Tests
+      uses: mavrosxristoforos/get-xml-info@1.1.1
+      id: getxml_skipped
+      if: always()
+      with:
+          xml-file: "./results.xml"
+          xpath: '//testsuite/@skipped'
+
+    - name: Generate Reports
+      if: always()
+      run: |
+          echo "tests=${{ steps.getxml_tests.outputs.info }}" >> $GITHUB_ENV
+          echo "failures=${{ steps.getxml_failures.outputs.info }}" >> $GITHUB_ENV
+          echo "skipped=${{ steps.getxml_skipped.outputs.info }}" >> $GITHUB_ENV
+          
+#     - name: Print Debug Log
+#       if: always()
+#       run: |
+#           echo "Results: failed: ${{ env.failed }}, passed: ${{ env.passed }}"
+#           cat ./debug.log
+
+
+    - name: Send Test Results to Microsoft Teams
+      run: |
+        curl -H "Content-Type: application/json" -d '{
+          "text": "Test Results",
+          "sections": [
+            {
+              "activityTitle": "Playwright REST-API Testing",
+              "activitySubtitle": "Execution Report",
+              "facts": [
+                {
+                  "name": "Tests",
+                  "value": "${{ env.tests }}"
+                },
+                {
+                  "name": "Skipped",
+                  "value": "${{ env.skipped }}"
+                },
+                {
+                  "name": "Failures",
+                  "value": "${{ env.failures }}"
+                }
+              ]
+            }
+          ]
+        }' https://brainstationo365.webhook.office.com/webhookb2/8057d271-7315-4cf8-bbc9-da07ef13bb7b@a1e21495-2087-4312-a718-7f84ad109439/IncomingWebhook/9be71384f7774125b9194d8d7cf9cd99/fad27405-4c18-4692-8d4b-a92e0cb2c130
+    
+  # success:
+  #   name: One with everything
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@master
+  #     - name: Microsoft Teams Notification
+  #       uses: skitionek/notify-microsoft-teams@master
+  #       if: always()
+  #       with:
+  #         webhook_url: https://brainstationo365.webhook.office.com/webhookb2/8057d271-7315-4cf8-bbc9-da07ef13bb7b@a1e21495-2087-4312-a718-7f84ad109439/IncomingWebhook/9be71384f7774125b9194d8d7cf9cd99/fad27405-4c18-4692-8d4b-a92e0cb2c130
+  #         needs: ${}
+  #         job: ${}
+  #         steps: ${}
+          
+  #         run: |
+  #           curl -H 'Content-Type: application/json' -d '{
+  #           "@type": "MessageCard",
+  #           "@context": "http://schema.org/extensions",
+  #           "title": "Build Status",
+  #           "text": "Build status: ${{ job.status }}\nRepository: ${{ github.repository }}\nCommit: ${{ github.sha }}"
+  #           }' $WEBHOOK_URL
+  #         dry_run: True
+      
+      
+  # without_optional_params:
+  #         name: One with little info
+  #         runs-on: ubuntu-latest
+  #         steps:
+  #           - uses: actions/checkout@master
+  #           - name: Microsoft Teams Notification
+  #             uses: skitionek/notify-microsoft-teams@master
+  #             if: always()
+  #             with:
+  #               webhook_url: https://brainstationo365.webhook.office.com/webhookb2/8057d271-7315-4cf8-bbc9-da07ef13bb7b@a1e21495-2087-4312-a718-7f84ad109439/IncomingWebhook/9be71384f7774125b9194d8d7cf9cd99/fad27405-4c18-4692-8d4b-a92e0cb2c130
+      
+  # with_overwrite:
+  #         name: One with overwrite
+  #         runs-on: ubuntu-latest
+  #         steps:
+  #           - uses: actions/checkout@master
+  #           - name: Microsoft Teams Notification
+  #             uses: skitionek/notify-microsoft-teams@master
+  #             if: always()
+  #             with:
+  #               webhook_url: https://brainstationo365.webhook.office.com/webhookb2/8057d271-7315-4cf8-bbc9-da07ef13bb7b@a1e21495-2087-4312-a718-7f84ad109439/IncomingWebhook/9be71384f7774125b9194d8d7cf9cd99/fad27405-4c18-4692-8d4b-a92e0cb2c130
+  #               overwrite: "{title: `Overwrote title in ${workflow_link}`}"
+      
+  # with_raw:
+  #         name: One with raw data
+  #         runs-on: ubuntu-latest
+  #         steps:
+  #           - uses: actions/checkout@master
+  #           - name: Microsoft Teams Notification
+  #             uses: skitionek/notify-microsoft-teams@master
+  #             if: always()
+  #             with:
+  #               webhook_url: https://brainstationo365.webhook.office.com/webhookb2/8057d271-7315-4cf8-bbc9-da07ef13bb7b@a1e21495-2087-4312-a718-7f84ad109439/IncomingWebhook/9be71384f7774125b9194d8d7cf9cd99/fad27405-4c18-4692-8d4b-a92e0cb2c130
+  #               raw: >-
+  #                 {
+  #                   "@type": "MessageCard",
+  #                   "@context": "http://schema.org/extensions",
+  #                   "title": "No ${variables} avaliable in here"
+  #                 }
+      
+  # if_failure:
+          # name: Only if failure
+          # runs-on: ubuntu-latest
+          # steps:
+          #   - uses: actions/checkout@master
+          #   - name: Microsoft Teams Notification
+          #     uses: skitionek/notify-microsoft-teams@master
+          #     if: failure()
+          #     with:
+          #       webhook_url: https://brainstationo365.webhook.office.com/webhookb2/8057d271-7315-4cf8-bbc9-da07ef13bb7b@a1e21495-2087-4312-a718-7f84ad109439/IncomingWebhook/9be71384f7774125b9194d8d7cf9cd99/fad27405-4c18-4692-8d4b-a92e0cb2c130
+
+
+
+
+
+
+    # notify on each build event like starting and finishing a build
+    # - uses: toko-bifrost/ms-teams-deploy-card@master
+    #   if: always()
+    #   with:
+    #     github-token: ${{ github.token }}
+    #     webhook-uri: https://brainstationo365.webhook.office.com/webhookb2/8057d271-7315-4cf8-bbc9-da07ef13bb7b@a1e21495-2087-4312-a718-7f84ad109439/IncomingWebhook/9be71384f7774125b9194d8d7cf9cd99/fad27405-4c18-4692-8d4b-a92e0cb2c130
+
+    # # notify Microsoft Teams channel with a custom message
+    # - uses: aliencube/microsoft-teams-actions@v0.8.0
+    #   with:
+    #     webhook_uri: https://brainstationo365.webhook.office.com/webhookb2/8057d271-7315-4cf8-bbc9-da07ef13bb7b@a1e21495-2087-4312-a718-7f84ad109439/IncomingWebhook/9be71384f7774125b9194d8d7cf9cd99/fad27405-4c18-4692-8d4b-a92e0cb2c130
+    #     title: This is a custom message
+    #     summary: This is a message summary
+
+
+
+# name: Teams Notification
+
+# on:
+#   workflow_run:
+#   workflows: ["*"]
+#   types:
+#     - completed
+# jobs:
+
+
+
+
+    
+
+ 
+    
+  

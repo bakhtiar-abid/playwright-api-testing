@@ -3,6 +3,8 @@ import { devices, PlaywrightTestConfig } from "@playwright/test";
 
 const config: PlaywrightTestConfig = {
 
+
+
     // testDir: "./RegisterTest/",
     // workers: 4,
     // fullyParallel: true,
@@ -25,10 +27,12 @@ const config: PlaywrightTestConfig = {
     //     // },
     // ],
 
+    
+
     use: {
        
         viewport: null,
-        headless: !true,
+        headless: false,
         // browserName: "chromium",
         screenshot: "on",
         video: "on",
@@ -53,13 +57,14 @@ const config: PlaywrightTestConfig = {
     // testMatch: ["harDemo/trackRequest.test.ts"],
     retries: 0,
     // reporter: "./customReport/myReporter.ts"
-    reporter: [
-        ["dot"], // -> console
-        ["json", { outputFile: "test-result.json" }], //  -> JSON
-        ['html', {
-            open: "always"
-        }] // -> HTML
-    ],
+    // reporter: [
+    //     ["dot"], // -> console
+    //     ["json", { outputFile: "test-result.json" }], //  -> JSON
+    //     ['html', {
+    //         open: "always"
+    //     }] // -> HTML
+    // ],
+    reporter: [['junit', { outputFile: 'results.xml' }]],
     // globalTeardown: './helper/globalsetup.ts'
 }
 export default config;
