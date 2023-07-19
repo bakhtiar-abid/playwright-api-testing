@@ -94,7 +94,7 @@ test("Add to cart", async ({request, baseURL})=>{
    })
 
 
- test("Get all produtcs", async ({request, baseURL})=>{
+ test("Get all cart items", async ({request, baseURL})=>{
 
   const _response =  await request.post(`${baseURL}/carts`,{
 

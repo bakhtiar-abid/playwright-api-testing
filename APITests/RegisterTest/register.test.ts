@@ -191,7 +191,7 @@ let id:number;
     
       // Extracting JSON response content
       const result = await _response.json();
-      expect(await Object.keys(result).length).toBe(5);
+     expect( Object.keys(result).length).toBe(5);
     
       
    });
